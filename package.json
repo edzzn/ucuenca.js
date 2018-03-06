@@ -1,0 +1,23 @@
+{
+  "name": "ucuenca",
+  "version": "0.1.0",
+  "description": "Librería de Python para la API de la Universidad de Cuenca",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edzzn/ucuenca.js.git"
+  },
+  "keywords": [
+    "ucuenca"
+  ],
+  "author": "Edisson Reinozo <edisson350@gmail.com> (https://edzzn.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edzzn/ucuenca.js/issues"
+  },
+  "homepage": "https://github.com/edzzn/ucuenca.js#readme",
+  "dependencies": {}
+}
