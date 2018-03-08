@@ -34,6 +34,24 @@ describe('Ucuenca Career', () => {
   });
 });
 
+describe('Ucuenca Notes', () => {
+  it('Check 0302068309\'s notes.', (done) => {
+    uc.notes({ studentId: '0302068309', careerId: 34, periodId: 115 }, (err, res) => {     
+      const schedulePath = path.join(TEST_RESOURCES, 'schedule.json');
+      const dataExpected = {}; // TODO: Check student notes
+      assert.isEmpty(res);
+      done();
+    })
+  });
+
+   it('Check invalid student\'s notes.', (done) => {
+    uc.notes({ studentId: '1234567890', careerId: 34, periodId: 115 }, (err, res) => {     
+      assert.isEmpty(res);
+      done();
+    });
+  });
+});  
+
 
 describe('Ucuenca Schedule', () => {
   it('Check 0104378690\'s schedule.', (done) => {
@@ -49,7 +67,6 @@ describe('Ucuenca Schedule', () => {
 
    it('Check invalid student\'s schedule.', (done) => {
     uc.schedule({ studentId: '1234567890' }, (err, res) => {     
-      console.log(`res: ${res}`);
       assert.isEmpty(res);
       done();
     });
