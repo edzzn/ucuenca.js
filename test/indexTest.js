@@ -70,10 +70,29 @@ describe('Ucuenca Schedule', () => {
       done();
     });
   });
+});
+
+describe('Ucuenca Curriculum Progress', () => {
+  it('Check 0104926787\'s curriculum_progress.', (done) => {
+    uc.curriculum_progress({ studentId: '0104926787', careerId: 44, curriculumId: 1, careerPlan:4 }, (err, res) => {
+      const schedulePath = path.join(TEST_RESOURCES, 'curriculum_progress.json');
+      fs.readFile(schedulePath, 'utf8', function(err, contents) {
+        const dataExpected = JSON.parse(contents);
+        expect(res).to.eql(dataExpected);
+      });
+      done();
+    })
+  });
+  it('Check invalid student\'s curriculum_progress.', (done) => {
+    uc.curriculum_progress({ studentId: '1234567890', careerId: 44, curriculumId: 1, careerPlan:4 }, (err, res) => {
+      const schedulePath = path.join(TEST_RESOURCES, 'curriculum_progress.json');
+      assert.isEmpty(res);
+      done();
+    })
+  });
 });  
 
 describe('Ucuenca Authentication', () => {
-
   it('Check wrong password.', (done) => {
     uc.authentication({ user: 'edisson.reinozo', passw: 'NotThisOne' }, (err, res) => {
       assert.isFalse(res[0]['Autenticacion']);
