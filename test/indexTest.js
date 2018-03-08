@@ -1,27 +1,33 @@
-const assert = require('chai').should();
-const should = require('chai').assert;
-const expect = require('chai').expect;
+const path = require('path');
+const assert = require('chai').assert;
+const fs = require('fs');
 
 const Ucuenca = require('../index.js');
 const uc = new Ucuenca();
-
+const TEST_RESOURCES = path.join(__dirname, 'tests_resources');
 
 describe('Ucuenca career', () => {
-  it('career shoudl not return an error', (done) => {
-    uc.careers('0104926787', (err, res) => {
-      
-      expect(err).to.not.exist;
+  it('Check 0104926787\'s careers.', (done) => {
+    uc.careers({ studentId: '0104926787' }, (err, res) => {
+      const careerPath = path.join(TEST_RESOURCES, 'careers.json');
+      fs.readFile(careerPath, 'utf8', function(err, contents) {
+        assert(contents, res);
+      });
       done();
     })
   });
 
-  it('Ucuenca returns career if a int is passed as a student_id', (done) => {
-    uc.careers('0104926787', (err, res) => {
-      const career = res[0];
-      const fecha_matricula = career['FECHA_MATRICULA'];
-      fecha_matricula.should.equal('2013-03-03 09:37:08.0');
+  it('Check invalid student\'s careers.', (done) => {
+    uc.careers({ studentId: '1234567890' }, (err, res) => {     
+      assert.isEmpty(res);
       done();
     });
   });
 
+  it('Check valid student\'s careers has data.', (done) => {
+    uc.careers({ studentId: '0104926787' }, (err, res) => {     
+      assert.isNotEmpty(res);
+      done();
+    });
+  });
 });
