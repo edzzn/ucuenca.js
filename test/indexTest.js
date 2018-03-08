@@ -52,7 +52,6 @@ describe('Ucuenca Notes', () => {
   });
 });  
 
-
 describe('Ucuenca Schedule', () => {
   it('Check 0104378690\'s schedule.', (done) => {
     uc.schedule({ studentId: '0104378690' }, (err, res) => {
@@ -68,6 +67,16 @@ describe('Ucuenca Schedule', () => {
    it('Check invalid student\'s schedule.', (done) => {
     uc.schedule({ studentId: '1234567890' }, (err, res) => {     
       assert.isEmpty(res);
+      done();
+    });
+  });
+});  
+
+describe('Ucuenca Authentication', () => {
+
+  it('Check wrong password.', (done) => {
+    uc.authentication({ user: 'edisson.reinozo', passw: 'NotThisOne' }, (err, res) => {
+      assert.isFalse(res[0]['Autenticacion']);
       done();
     });
   });
