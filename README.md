@@ -6,14 +6,20 @@
 # ucuenca.js
 Librería de Python para la API de la Universidad de Cuenca
 
-# UNDER DEVELOPMENT!!
-Este paquete es funcional, pero aun no esta listo para producción. 
+# Importante
+Paquete es funcional y tiene una suite de pruebas básicas.
+
+Pienso que no hay necesidad de modificar al menos la forma de acceso a los recursos.
+
+Cualquier recomendación o duda pueden escribirme.
+
+Es repositorio es publico y toda ayuda o mejora es bienvenida.
 
 Necesita
 - [x] Es funcional
 - [x] Tiene tests y CI
-- [ ] Completar las pruebas
-- [ ] Reescribir el paquete
+- [X] Completar las pruebas
+- [ ] Reescribir el paquete (Optimizar)
 
 ## Install
 
