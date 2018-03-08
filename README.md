@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/edzzn/ucuenca.js.svg?branch=master)](https://travis-ci.org/edzzn/ucuenca.js)
+[![npm version](https://badge.fury.io/js/ucuenca.svg)](https://badge.fury.io/js/ucuenca)
 [![GitHub license](https://img.shields.io/github/license/edzzn/ucuenca.js.svg)](https://github.com/edzzn/ucuenca.js/blob/master/LICENSE)
 
 
