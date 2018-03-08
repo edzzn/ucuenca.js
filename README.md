@@ -36,7 +36,7 @@ const Ucuenca = require('ucuenca');
 const uc = new Ucuenca();
 // Un estudiante puede cursar varias carreras,
 // obtenemos una sola.
-uc.careers({ studentId: '1234567890' }, (err, res) => {
+uc.careers({ studentId: '0104926787' }, (err, res) => {
   if (err) { 
     console.log(err);
     return;
