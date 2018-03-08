@@ -1,7 +1,18 @@
+[![Build Status](https://travis-ci.org/edzzn/ucuenca.js.svg?branch=master)](https://travis-ci.org/edzzn/ucuenca.js)
+[![GitHub license](https://img.shields.io/github/license/edzzn/ucuenca.js.svg)](https://github.com/edzzn/ucuenca.js/blob/master/LICENSE)
+
+
 # ucuenca.js
 Librería de Python para la API de la Universidad de Cuenca
 
-## UNDER DEVELOPMENT!!
+# UNDER DEVELOPMENT!!
+Este paquete es funcional, pero aun no esta listo para producción. 
+
+Necesita
+- [x] Es funcional
+- [x] Tiene tests y CI
+- [ ] Completar las pruebas
+- [ ] Reescribir el paquete
 
 ## Install
 
