@@ -12,6 +12,12 @@ class Ucuenca {
     const response = this.get('registroacademico', params, callback);
   }
 
+  schedule(object, callback) {
+    const params = {
+      idEstudiante: object['studentId']
+    }
+    const response = this.get('horarios', params, callback);
+  }
 
   notes(object, callback){
     const params = {
@@ -22,7 +28,7 @@ class Ucuenca {
     return this.get('registroacademico/notas', params, callback);
   }
 
-  schedule(object, callback){
+  curriculum_progress(object, callback){
     const params={
       idEstudiante: object['studentId'],
       idCarrera: object['careerId'],
