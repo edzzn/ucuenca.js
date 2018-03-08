@@ -39,7 +39,6 @@ class Ucuenca {
 
   get(service_name, params, callback){
     const url = this.get_url(service_name, params);
-    console.log(url);
     const response = this.request(url, callback);
   }
 
