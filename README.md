@@ -27,15 +27,15 @@ Librería de JavaScript para la API de la [Universidad de Cuenca](http://www.ucu
 ```javascript
 const Ucuenca = require('ucuenca');
 const uc = new Ucuenca();
-# Un estudiante puede cursar varias carreras,
-# obtenemos una sola.
-uc.careers('0104926787', (err, res) => {
+// Un estudiante puede cursar varias carreras,
+// obtenemos una sola.
+uc.careers({ studentId: '1234567890' }, (err, res) => {
   if (err) { 
     console.log(err);
     return;
   };
   const career = res[0];
-  console.log(career['MALLA']); # MALLA CONTABILIDAD Y AUDITORIA 2008
-  console.log(career['FECHA_MATRICULA']); # 2013-03-03 09:37:08.0
+  console.log(career['MALLA']); // MALLA CONTABILIDAD Y AUDITORIA 2008
+  console.log(career['FECHA_MATRICULA']); // 2013-03-03 09:37:08.0
 });
 ```
