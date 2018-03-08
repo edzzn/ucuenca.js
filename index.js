@@ -4,35 +4,38 @@ const http = require('http');
 const BASE_URL = "http://evaluacion.ucuenca.edu.ec/ucuenca-rest-ws/api/v1/"
 
 class Ucuenca {
-  careers(student_id, callback) {
-    const response = this.get('registroacademico', {'idEstudiante': student_id}, callback);
+
+  careers(object, callback) {
+    const params = {
+      idEstudiante: object['studentId']
+    }
+    const response = this.get('registroacademico', params, callback);
   }
 
 
-  notes(student_id, career_id, period_id, callback){
+  notes(object, callback){
     const params = {
-      idEstudiante: student_id,
-      idCarrera: career_id,
-      idPerlec: period_id
+      idEstudiante: object['studentId'],
+      idCarrera: object['careerId'],
+      idPerlec: object['periodId']
     }
-
     return this.get('registroacademico/notas', params, callback);
   }
 
-  schedule(student_id, career_id=1, curriculum_id, career_plan, callback){
+  schedule(object, callback){
     const params={
-      idEstudiante: student_id,
-      idCarrera: career_id,
-      idMalla: curriculum_id,
-      idPlacar: career_plan
+      idEstudiante: object['studentId'],
+      idCarrera: object['careerId'],
+      idMalla: object['curriculumId'],
+      idPlacar: object['careerPlan']
     }
     return this.get('registroacademico/malla', params, callback);
   }
 
-  authentication(user, passw, callback){
+  authentication(object, callback){
     const params={
-      usuario: user,
-      pass: passw
+      usuario: object['user'],
+      pass: object['passw']
     }
     return this.get('acceso', params, callback);
   }
