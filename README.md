@@ -4,7 +4,7 @@
 
 
 # ucuenca.js
-Librería de Python para la API de la Universidad de Cuenca
+Librería de nodejs para la API de la Universidad de Cuenca
 
 # Importante
 Paquete es funcional y tiene una suite de pruebas básicas.
